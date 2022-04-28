@@ -5,7 +5,7 @@
  
 # Установка Linux\Termux:
 * git clone https://github.com/teamXofficial/Team_X_SharkZilla
-* cd Team_X_ShakZilla
+* cd Team_X_SharkZilla
 * pip install colorama
 * chmod +x *
 * python main.py
