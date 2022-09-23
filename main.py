@@ -9,7 +9,7 @@ from time import sleep
 from lib import *
 init(autoreset=True)
 
-""" Cписок название переменных персонажей
+""" Cписок переменных у персонажей:
 ga - Атака Годзиллы
 gd - Защита Годзиллы
 gx - Ловкость Годзиллы
@@ -18,6 +18,8 @@ sa - Атака Акулы
 sd - Защита Акулы
 sx - Ловкость Акулы
 sHP - Здоровье Акулы
+lvl - Я хз что это, но высчитывается значение как-то странно
+points - см. lvl
 """
 # Очистка консоли
 def clear():
@@ -29,16 +31,16 @@ def clear():
 
 # Ретурн
 def ret():
-    print(f'{r}[!]Вы ввели неверное значение!!!')
-    s()
+    print(f'{r}[!]Вы ввели неверное значение!')
+    sleep(0.25)
     clear()
     return op()
 
 # Параметры игроков
 def op():
-    ran = input(f'{lc}Использовать рандом параметры для Гадзиллы?\n{b}[1] - да\n{r}[2] - нет\n{m}>>> ')
+    ran = input(f'{lc}Использовать рандом параметры для Годзиллы?\n{b}[1] - да\n{r}[2] - нет\n{m}>>> ')
     if ran == '1':
-        print(f'{b}Хорошо, это я мигом!!!')
+        print(f'{b}Хорошо, это я мигом!')
         sleep(0.25)
         ga = randint(50, 200)
         gd = randint(1, 49)
@@ -59,25 +61,25 @@ def op():
         print(f'{r}Как пожелаете!')
         sleep(0.25)
         clear()
-        ga0 = input(f'{r}Введите силу атаки Годзилы(50-200)>>> ')
+        ga0 = input(f'{r}Введите силу атаки Годзиллы(50-200)>>> ')
         ga = int(ga0)
         if ga > 200 or ga < 50:
              ret()
         else:
             sleep(0.25)
-            gd0 = input(f'{g}Введите защиту Годзилы(1-49)>>> ')
+            gd0 = input(f'{g}Введите защиту Годзиллы(1-49)>>> ')
             gd = int(gd0)
             if gd > 49 or gd < 1:
                 ret()
             else:
                 sleep(0.25)
-                gx0 = input(f'{b}Введите ловкость Годзилы(1-9)>>> ')
+                gx0 = input(f'{b}Введите ловкость Годзиллы(1-9)>>> ')
                 gx = int(gx0)
                 if gx > 9 or gx < 0:
                     ret()
                 else:
                     lvl = gx * 50
-                    gHP0 = input(f'{b}Введите здоровье Годзилы (50-500)>>> ')
+                    gHP0 = input(f'{b}Введите здоровье Годзиллы (50-500)>>> ')
                     gHP = int(gHP0)
                     if gHP > 500 or gHP < 50:
                         ret()
@@ -149,13 +151,20 @@ def game(ga,gd,gx,gHP,sa,sd,sx,sHP):
     set0 = f"""
            {lc}Godzilla VS Shark!
 
-{r}Гадзилла: {ga} ATK{pr1}{r}Акула: {sa} ATK
-{m}Гадзилла: {gd} DEF{pr2}{m}Акула: {sd} DEF 
-{y}Гадзилла: {gHP} HP{pr3}{y}Акула: {sHP} HP
-{b}Гадзилла удача: {gx}0%      {b}Акула удача: {gx}0%
+{r}Годзилла: {ga} ATK{pr1}{r}Акула: {sa} ATK
+{m}Годзилла: {gd} DEF{pr2}{m}Акула: {sd} DEF 
+{y}Годзилла: {gHP} HP{pr3}{y}Акула: {sHP} HP
+{b}Годзилла: {gx}0% LUCK      {b}Акула: {gx}0% LUCK
  
 """
     print(set0)
+    #TODO: заменить set0 на это
+#    print("Годзилла против Акулы!\n"
+#          "\n"
+#          "Годзилла: {ga} ATK{pr1} Акула: {sa} ATK"
+#          "Годзилла: {gd} DEF{pr2} Акула: {sd} DEF"
+#          "Годзилла: {gHP} HP{pr3} Акула: {sHP} HP"
+#          "Годзилла: {gx}0% LUCK   Акула: {gx}0% LUCK")
     a = 1 
     
     if ga > sd and sa > gd: 
