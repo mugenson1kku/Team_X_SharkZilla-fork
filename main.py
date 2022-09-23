@@ -1,5 +1,5 @@
 """
-2022 by Team_X_Official & G1tic
+2022 by Team_X_Official, G1tic & mugenson1kku
 Игра простенькая, консольная, и в будушем будут доработки
 """
 
@@ -10,10 +10,10 @@ from lib import *
 init(autoreset=True)
 
 """ Cписок название переменных персонажей
-ga - Атака Гадзилы
-gd - Защита Гадзилы
-gx - Ловкость Гадзилы
-gHP - Здоровье Гадзилы
+ga - Атака Годзиллы
+gd - Защита Годзиллы
+gx - Ловкость Годзиллы
+gHP - Здоровье Годзиллы
 sa - Атака Акулы  
 sd - Защита Акулы
 sx - Ловкость Акулы
@@ -27,14 +27,6 @@ def clear():
     else:
         os.system('clear')
 
-# Сон 0.5
-def s():
-    sleep(0.25)
-
-# Сон 2
-def s2():
-    sleep(2)
-
 # Ретурн
 def ret():
     print(f'{r}[!]Вы ввели неверное значение!!!')
@@ -47,7 +39,7 @@ def op():
     ran = input(f'{lc}Использовать рандом параметры для Гадзиллы?\n{b}[1] - да\n{r}[2] - нет\n{m}>>> ')
     if ran == '1':
         print(f'{b}Хорошо, это я мигом!!!')
-        s()
+        sleep(0.25)
         ga = randint(50, 200)
         gd = randint(1, 49)
         gx = randint(1, 9)
@@ -65,20 +57,20 @@ def op():
         game(ga,gd,gx,gHP,sa,sd,sx,sHP)
     elif ran == '2':
         print(f'{r}Как пожелаете!')
-        s()
+        sleep(0.25)
         clear()
         ga0 = input(f'{r}Введите силу атаки Годзилы(50-200)>>> ')
         ga = int(ga0)
         if ga > 200 or ga < 50:
              ret()
         else:
-            s()
+            sleep(0.25)
             gd0 = input(f'{g}Введите защиту Годзилы(1-49)>>> ')
             gd = int(gd0)
             if gd > 49 or gd < 1:
                 ret()
             else:
-                s()
+                sleep(0.25)
                 gx0 = input(f'{b}Введите ловкость Годзилы(1-9)>>> ')
                 gx = int(gx0)
                 if gx > 9 or gx < 0:
@@ -105,34 +97,32 @@ def op():
 # Начало боя       
 def f():
     print(f'{r}3')
-    s()
+    sleep(0.25)
     print(f'{g}2')
-    s()
+    sleep(0.25)
     print(f'{b}1')
-    s()
+    sleep(0.25)
     clear()
     print(f'{lc}Fight!!!')
-    s()
+    sleep(0.25)
     clear()
     print(f'{y}Fight!!!')
-    s()
+    sleep(0.25)
     clear()
     print(f'{m}Fight!!!')
-    s()
+    sleep(0.25)
     clear()
     print(f'{r}Fight!!!')
-    s()
+    sleep(0.25)
     clear()
     print(f'{g}Fight!!!')
-    s()
+    sleep(0.25)
     clear()
     print(f'{b}Fight!!!')
     clear()
 
 # Код боя
 def game(ga,gd,gx,gHP,sa,sd,sx,sHP): 
-    s = sleep(0.3)
-    s1 = sleep(1)
     a1 = '        '
     a2 = '         '
     a3 = '          '
@@ -175,88 +165,84 @@ def game(ga,gd,gx,gHP,sa,sd,sx,sHP):
             if a == 1: 
                 if gHP > 0 and sHP > 0: 
                     print(f'{b}Гадзилла аттакует!')
-                    s
+                    sleep(0.3)
                     print(godz1)
-                    s1
+                    sleep(1)
                     if num2 > 0: 
                         sHP = sHP - ga + sd
                         print(f'{r}Урон Гадзиллы: {ga - sd}') 
-                        s1
+                        sleep(1)
                         if sHP < 0:
-                            s1
+                            sleep(1)
                             print(f'{lc}Здоровье Акулы = 0') 
                         else:
                             print(f'{lc}Здоровье Акулы = {sHP}')
-                            s
+                            sleep(0.3)
                             print(f'{b}Акула аттакует!')
-                            s
+                            sleep(0.3)
                             print(shark1)
-                            s1 
+                            sleep(1) 
                             if num1 > 0: 
                                 gHP = gHP - sa + gd 
                                 print(f'{lc}Урон Акулы: {sa - gd}') 
-                                s1
+                                sleep(1)
                                 if gHP < 0:
                                     print(f'{lc}Здоровье Гадзиллы = 0')
                                 else:
                                     print(f'{g}Здоровье Гадзиллы = {gHP}')
-                                    s1
+                                    sleep(1)
                             elif num1 == 0:
                                 print(f'{y}Гадзилла увернулась!')
                     
                     elif num2 == 0: 
                         print(f'{y}Акула увернулась!') 
-                        s1
+                        sleep(1)
                         if sHP > 0: 
                             print(f'{lc}Акула аттакует!') 
-                            s
+                            sleep(1)
                             print(shark1)
-                            s2()
+                            sleep(2.0)
                             if num1 > 0: 
                                 gHP = gHP - sa + gd 
                                 print(f'{lc}Урон акулы: {sa - gd}') 
-                                s1
+                                sleep(1)
                                 if gHP < 0:
                                     print(f'{lc}Здоровье Гадзиллы = 0')
                                 else:
                                     print(f'{g}Здоровье Гадзиллы = {gHP}')
-                                    s1
+                                    sleep(1)
                             elif num1 == 0: 
                                 print(f'{y}Гадзилла увернулась!') 
-                                s1
+                                ssleep(1)
                 else:
                     if sHP <= 0 and a == 1:
                         print(f'{g}Гадзилла победила!') 
                         a = 0
-                        s2()
+                        sleep(2.0)
                         back()
                     elif gHP <= 0 and a == 1: 
                         print(f'{g}Акула победила!') 
                         a = 0
-                        s2()
+                        sleep(2.0)
                         back()
     else: 
         print(f'{r}[!]Ошибка, защита больше чем атака')
-        s2()
+        sleep(2.0)
         back()
 
 # Инструкция
 def inst():
     clear()
     print(f'{y}Инструкция:')
-    s()
     print(f'{b}Для того, чтобы начать играть вернитесь в главное меню, и выбирете "Начать игру!"')
-    s2()
     print(f'{g}После, у вас будет возможность выбрать ли сами будете выбирать характеристики своего персонажа, или на рандом(на угад).')
-    s2()
     print(f'{r}И вы начнете играть!!!')
-    s2()
     back()
 
 # Выход 
 def ex():
     print(f'{m}Спасибо за использование скрипта!!!\n')
-    s2()
+    sleep(2.0)
     print(f'{r}[!]Завершение работы скрипта через 10 секунд...')
     sleep(9)
     print(f'{lc}Пока!!!')
