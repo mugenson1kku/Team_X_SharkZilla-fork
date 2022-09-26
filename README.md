@@ -1,12 +1,14 @@
-# Team_X_SharkZilla
+# Проект переехал сюда - https://notabug.org/mugeen/Team_X_SharkZilla-fork/
+
+## Team_X_SharkZilla
 
 P.S. - Описание (как и код) находится в состоянии переписывания
 
-## О программе
+### О программе
 Форк ["Team X SharkZilla"](https://github.com/teamXofficial/Team_X_SharkZilla), ставящий своей целью улучшить читаемость кода оригинала
 
 
-## Разработчики
+### Разработчики
 [G1tic](https://t.me/G1tic) - изначальный автор
 Его TG-канал: [@git_zilla](https://t.me/git_zilla)
 
@@ -16,7 +18,7 @@ P.S. - Описание (как и код) находится в состоян�
 [mugeen](https://github.com/mugenson1kku) - автор этого форка
 
 
-# Установка на GNU/Linux или Android Linux (через Termux):
+### Установка на GNU/Linux или Android Linux (через Termux):
 * git clone https://github.com/teamXofficial/Team_X_SharkZilla
 * cd Team_X_SharkZilla
 * pip install colorama
